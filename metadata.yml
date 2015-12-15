@@ -1,0 +1,9 @@
+# file: metadata.yml
+
+---
+name: PMR_demo_API
+version: 0.1
+type: query
+main_module: main.py
+url: http://metnetdb.org/PMR/
+description: 'Demo adapter returns one hard coded example of JSON input for plotly box plot.'

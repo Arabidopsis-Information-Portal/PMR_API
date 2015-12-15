@@ -1,7 +1,7 @@
 # file: metadata.yml
 
 ---
-name: PMR_demo_API
+name: pmr_demo_api
 version: 0.1
 type: query
 main_module: main.py

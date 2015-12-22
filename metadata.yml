@@ -7,4 +7,4 @@ type: query
 main_module: main.py
 url: http://metnetdb.org/PMR/
 description: 'Demo adapter returns one hard coded example of JSON input for plotly box plot.'
-icon: pmr_small.png
+icon: pmr_large.png

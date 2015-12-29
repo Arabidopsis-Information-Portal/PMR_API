@@ -31,7 +31,7 @@ def search(args):
 
     # If the remote service indicates success (200) then pass along the payload.
     # Assume the payload is a JSON object.
-    # remoteURL = PMR_BASE_URL + PMR_SERVICE + PMR_QUERY
+    remoteURL = PMR_BASE_URL + PMR_SERVICE + PMR_QUERY
     response = requests.get(remoteURL, verify=False)
     if response.status_code==200:
         print response.json()

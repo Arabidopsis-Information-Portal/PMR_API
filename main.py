@@ -6,6 +6,7 @@ import requests
 PMR_BASE_URL = 'http://pmr-webapi.gdcb.iastate.edu/pmrWebApi/api/v1'
 PMR_SERVICE = '/boxplot'
 PMR_QUERY = '/species=Arabidopsis_thaliana&expId=106&omicsType=valMetabolomics&pId=84&mId=4349&dataVersion=1.0&minLod=true&legendColor=sampleName/'
+PMR_FULL_URL = 'http://pmr-webapi.gdcb.iastate.edu/pmrWebApi/api/v1/boxplot/species=Arabidopsis_thaliana&expId=106&omicsType=valMetabolomics&pId=84&mId=4349&dataVersion=1.0&minLod=true&legendColor=sampleName/'
 
 def search(args):
     """
@@ -30,9 +31,15 @@ def search(args):
     # If the remote service indicates success (200) then pass along the payload.
     # Assume the payload is a JSON object.
     remoteURL = PMR_BASE_URL + PMR_SERVICE + PMR_QUERY
+    # For debug, uncomment...
+    #print remoteURL
+    #print '---'
     response = requests.get(remoteURL, verify=False)
     if response.status_code==200:
-        print response.json()
+        # Do not output JSON. Let Adama environment format this.
+        #print response.json()
+        #print '---'
+        print response.text
         print '---'
 
 # For interactive test, uncomment this call.

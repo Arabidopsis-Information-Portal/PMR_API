@@ -2,8 +2,6 @@
 
 # optional: import python libraries such as 'import json'
 import requests
-import urlparse
-import json
 
 PMR_BASE_URL = 'http://pmr-webapi.gdcb.iastate.edu/pmrWebApi/api/v1'
 PMR_SERVICE = '/boxplot'
@@ -37,5 +35,5 @@ def search(args):
         print response.json()
         print '---'
 
-# For interactive test...
+# For interactive test, uncomment this call.
 #search('1234')

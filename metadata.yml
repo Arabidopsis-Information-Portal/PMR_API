@@ -1,6 +1,5 @@
-# file: metadata.yml
-
 ---
+
 name: pmr_demo_api
 version: 0.1
 type: query
@@ -10,6 +9,9 @@ description: 'Demo adapter calls hard coded URL that returns JSON input for plot
 icon: pmr_large.png
 whitelist:
   - pmr-webapi.gdcb.iastate.edu
+
+requirements:
+    - requests
 
 endpoints:
   /search:

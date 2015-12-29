@@ -6,5 +6,17 @@ version: 0.1
 type: query
 main_module: main.py
 url: http://metnetdb.org/PMR/
-description: 'Demo adapter returns one hard coded example of JSON input for plotly box plot.'
+description: 'Demo adapter calls hard coded URL that returns JSON input for plotly box plot.'
 icon: pmr_large.png
+whitelist:
+  - pmr-webapi.gdcb.iastate.edu
+
+endpoints:
+  /search:
+    description: 'Get Plotly input in JSON format'
+    parameters:
+      - name: mID
+        description: Metabolite ID.
+        type: integer
+        required: true
+        default: 4383

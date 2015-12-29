@@ -17,6 +17,6 @@ endpoints:
     parameters:
       - name: mID
         description: Metabolite ID.
-        type: integer
+        type: string
         required: true
         default: 4383

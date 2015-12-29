@@ -38,4 +38,4 @@ def search(args):
         print '---'
 
 # For interactive test...
-search(1234)
+#search('1234')

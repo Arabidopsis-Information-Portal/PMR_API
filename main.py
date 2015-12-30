@@ -2,6 +2,7 @@
 
 # optional: import python libraries such as 'import json'
 import requests
+import json
 
 PMR_BASE_URL = 'http://pmr-webapi.gdcb.iastate.edu/pmrWebApi/api/v1'
 PMR_SERVICE = '/boxplot'
@@ -62,10 +63,12 @@ def search(args):
         print '---'
         return
 
-    # Do not output JSON. Let Adama environment format this.
-    #print response.json()
-    #print '---'
-    #print response.text
+    # Do not call response.json() because the return is wrapped in envelope.
+    # Do not return response.text because quote characters need escaping.
+    # Instead, get the JSON text from response and use json.dumps().
+    print response_text
+    print '---'
+    print json.dumps(response_text)
     print '---'
     return
 

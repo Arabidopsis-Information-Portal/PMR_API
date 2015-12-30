@@ -54,11 +54,12 @@ def search(args):
     #if response.status_code != 200:
     ###response.raise_for_status();
 
-    if response.status_code == 200:
-        print '{"good news"}'
+    response_code = response.status_code
+    if response_code == 200:
+        print '{"status":200}'
         print '---'
     else:
-        print '{"bad news"}'
+        print '{"error":' + response.reason + '}'
         print '---'
     return
 

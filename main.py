@@ -19,8 +19,14 @@ def search(args):
     The search(args) function implements the /search endpoint of the web service.
     The args are taken from the URL of an HTTP GET.
     Call the remote service.
+    On error, raise HTTPError exception.
     On success, print the JSON payload to STDOUT.
     """
+
+    # Test. Expect no timeout.
+    print "---"
+    return
+
     if args == None:
         # Back door.
         # Just during our development phase, the return is hard-coded.

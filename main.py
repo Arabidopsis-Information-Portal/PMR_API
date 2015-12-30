@@ -56,7 +56,6 @@ def search(args):
     ###response.raise_for_status();
 
     response_code = response.status_code
-    response_text = response.text
     if response_code != 200:
         # Later, change this to raise an exception instead.
         print '{"error":' + response.reason + '}'
@@ -66,8 +65,7 @@ def search(args):
     # Do not call response.json() because the return is wrapped in envelope.
     # Do not return response.text because quote characters need escaping.
     # Instead, get the JSON text from response and use json.dumps().
-    print response_text
-    print '---'
+    response_text = response.text
     print json.dumps(response_text)
     print '---'
     return

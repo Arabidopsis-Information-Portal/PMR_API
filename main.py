@@ -13,6 +13,7 @@ def list(args):
     List metabolite IDs accepted by search().
     """
     print '{"mID":4383}'
+    return
 
 def search(args):
     """
@@ -45,12 +46,13 @@ def search(args):
     # If the remote service indicates success (200) then pass along the payload.
     # Assume the payload is a JSON object.
     remoteURL = PMR_BASE_URL + PMR_SERVICE + PMR_QUERY
-    # For debug, uncomment...
-    #print remoteURL
-    #print '---'
 
     # Invoke the remote service.
     response = requests.get(remoteURL)
+    # For debug, ignore response, just exit
+    print remoteURL
+    print '---'
+    return
 
     # This library method raises HTTPError exception if status not 200.
     #if response.status_code != 200:

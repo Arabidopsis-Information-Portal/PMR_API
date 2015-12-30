@@ -10,6 +10,39 @@ PMR_QUERY = '/field=value'
 PMR_EXAMPLE_SEARCH = 'http://pmr-webapi.gdcb.iastate.edu/pmrWebApi/api/v1/boxplot/species=Arabidopsis_thaliana&expId=106&omicsType=valMetabolomics&pId=84&mId=4349&dataVersion=1.0&minLod=true&legendColor=sampleName/'
 PMR_EXAMPLE_METABOLITE_LIST = 'http://pmr-webapi.gdcb.iastate.edu/pmrWebApi/api/v1/metabolites/list/species=Arabidopsis_thaliana&expId=106&pId=84&dataVersion=1.0/'
 
+def execute_query(remoteURL):
+    # Test. What if there is no output?
+    #print "---"
+    #return
+    # Result: Adama throws an exception, apperently from a JSON parser.
+    #     "exception": "ValueError", "message": "No JSON object could be decoded", ...
+
+    # Invoke the remote service.
+    response = requests.get(remoteURL)
+
+    # This library method raises HTTPError exception if status not 200.
+    #if response.status_code != 200:
+    ###response.raise_for_status();
+
+    response_code = response.status_code
+    if response_code != 200:
+        ## This is useful for local debugging
+        # print '{"URL":' + remoteURL + '}'
+        # print '{"error":' + response.reason + '}'
+        # print '---'
+        # return
+        ## This is better for deployment
+        raise HTTPError
+        return
+
+    # Do not call response.json() because the return is wrapped in envelope.
+    # Do not return response.text because quote characters need escaping.
+    # Instead, get the JSON text from response and use json.dumps().
+    response_text = response.text
+    print json.dumps(response_text)
+    print '---'
+    return
+
 def list(args):
     """
     List metabolite IDs accepted by search().
@@ -43,39 +76,6 @@ def search(args):
     PMR_SERVICE = '/boxplot'
     PMR_QUERY = '/species=Arabidopsis_thaliana&expId=106&omicsType=valMetabolomics&pId=84&mId=4349&dataVersion=1.0&minLod=true&legendColor=sampleName/'
     execute_query(PMR_BASE_URL + PMR_SERVICE + PMR_QUERY)
-    return
-
-def execute_query(remoteURL):
-    # Test. What if there is no output?
-    #print "---"
-    #return
-    # Result: Adama throws an exception, apperently from a JSON parser.
-    #     "exception": "ValueError", "message": "No JSON object could be decoded", ...
-
-    # Invoke the remote service.
-    response = requests.get(remoteURL)
-
-    # This library method raises HTTPError exception if status not 200.
-    #if response.status_code != 200:
-    ###response.raise_for_status();
-
-    response_code = response.status_code
-    if response_code != 200:
-        ## This is useful for local debugging
-        # print '{"URL":' + remoteURL + '}'
-        # print '{"error":' + response.reason + '}'
-        # print '---'
-        # return
-        ## This is better for deployment
-        raise HTTPError
-        return
-
-    # Do not call response.json() because the return is wrapped in envelope.
-    # Do not return response.text because quote characters need escaping.
-    # Instead, get the JSON text from response and use json.dumps().
-    response_text = response.text
-    print json.dumps(response_text)
-    print '---'
     return
 
 # This is for interactive testing. Use the unix command 'python main.py'.

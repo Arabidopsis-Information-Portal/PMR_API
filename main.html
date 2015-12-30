@@ -18,15 +18,17 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
     
 <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="requests.html">requests</a><br>
-</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="json.html">json</a><br>
+</td><td width="25%" valign=top><a href="requests.html">requests</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#eeaa77">
 <td colspan=3 valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-list"><strong>list</strong></a>(args)</dt><dd><tt>List&nbsp;metabolite&nbsp;IDs&nbsp;accepted&nbsp;by&nbsp;<a href="#-search">search</a>().</tt></dd></dl>
+<td width="100%"><dl><dt><a name="-execute_query"><strong>execute_query</strong></a>(remoteURL)</dt></dl>
+ <dl><dt><a name="-list"><strong>list</strong></a>(args)</dt><dd><tt>List&nbsp;metabolite&nbsp;IDs&nbsp;accepted&nbsp;by&nbsp;<a href="#-search">search</a>().</tt></dd></dl>
  <dl><dt><a name="-search"><strong>search</strong></a>(args)</dt><dd><tt>The&nbsp;<a href="#-search">search</a>(args)&nbsp;function&nbsp;implements&nbsp;the&nbsp;/search&nbsp;endpoint&nbsp;of&nbsp;the&nbsp;web&nbsp;service.<br>
 The&nbsp;args&nbsp;are&nbsp;taken&nbsp;from&nbsp;the&nbsp;URL&nbsp;of&nbsp;an&nbsp;HTTP&nbsp;GET.<br>
 Call&nbsp;the&nbsp;remote&nbsp;service.<br>
@@ -40,7 +42,8 @@ On&nbsp;success,&nbsp;print&nbsp;the&nbsp;JSON&nbsp;payload&nbsp;to&nbsp;STDOUT.
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>PMR_BASE_URL</strong> = 'http://pmr-webapi.gdcb.iastate.edu/pmrWebApi/api/v1'<br>
-<strong>PMR_FULL_URL</strong> = 'http://pmr-webapi.gdcb.iastate.edu/pmrWebApi/api...taVersion=1.0&amp;minLod=true&amp;legendColor=sampleName/'<br>
-<strong>PMR_QUERY</strong> = '/species=Arabidopsis_thaliana&amp;expId=106&amp;omicsTyp...taVersion=1.0&amp;minLod=true&amp;legendColor=sampleName/'<br>
-<strong>PMR_SERVICE</strong> = '/boxplot'</td></tr></table>
+<strong>PMR_EXAMPLE_METABOLITE_LIST</strong> = 'http://pmr-webapi.gdcb.iastate.edu/pmrWebApi/api...dopsis_thaliana&amp;expId=106&amp;pId=84&amp;dataVersion=1.0/'<br>
+<strong>PMR_EXAMPLE_SEARCH</strong> = 'http://pmr-webapi.gdcb.iastate.edu/pmrWebApi/api...taVersion=1.0&amp;minLod=true&amp;legendColor=sampleName/'<br>
+<strong>PMR_QUERY</strong> = '/field=value'<br>
+<strong>PMR_SERVICE</strong> = '/service'</td></tr></table>
 </body></html>

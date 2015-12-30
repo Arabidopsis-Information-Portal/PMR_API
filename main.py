@@ -8,7 +8,7 @@ PMR_SERVICE = '/boxplot'
 PMR_QUERY = '/species=Arabidopsis_thaliana&expId=106&omicsType=valMetabolomics&pId=84&mId=4349&dataVersion=1.0&minLod=true&legendColor=sampleName/'
 PMR_FULL_URL = 'http://pmr-webapi.gdcb.iastate.edu/pmrWebApi/api/v1/boxplot/species=Arabidopsis_thaliana&expId=106&omicsType=valMetabolomics&pId=84&mId=4349&dataVersion=1.0&minLod=true&legendColor=sampleName/'
 
-def list():
+def list(args):
     """
     List metabolite IDs accepted by search().
     """
@@ -50,3 +50,4 @@ def search(args):
 
 # For interactive test, uncomment this call.
 search('4383')
+list('metabolite')

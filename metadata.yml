@@ -22,3 +22,6 @@ endpoints:
         type: string
         required: true
         default: 4383
+
+  /list:
+    description: 'List metabolite IDs in JSON format'

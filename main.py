@@ -29,7 +29,7 @@ def search(args):
     # Result: Adama throws an exception, apperently from a JSON parser.
     #     "exception": "ValueError", "message": "No JSON object could be decoded", ...
 
-    if args == None or args != None:
+    if args == None:
         # Back door.
         # Just during our development phase, the return is hard-coded.
         # The following value is sample data to draw an actual box plot with plotly.
@@ -48,7 +48,7 @@ def search(args):
     # For debug, uncomment...
     #print remoteURL
     #print '---'
-    response = requests.get(remoteURL, verify=False)
+    response = requests.get(remoteURL)
 
     # This library method raises HTTPError exception if status not 200.
     #if response.status_code != 200:

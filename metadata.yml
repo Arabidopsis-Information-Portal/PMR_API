@@ -1,7 +1,7 @@
 ---
 
 name: pmr_demo_api
-version: 0.1
+version: 0.2
 type: query
 main_module: main.py
 url: http://metnetdb.org/PMR/

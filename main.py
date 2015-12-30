@@ -5,15 +5,23 @@ import requests
 import json
 
 PMR_BASE_URL = 'http://pmr-webapi.gdcb.iastate.edu/pmrWebApi/api/v1'
-PMR_SERVICE = '/boxplot'
-PMR_QUERY = '/species=Arabidopsis_thaliana&expId=106&omicsType=valMetabolomics&pId=84&mId=4349&dataVersion=1.0&minLod=true&legendColor=sampleName/'
-PMR_FULL_URL = 'http://pmr-webapi.gdcb.iastate.edu/pmrWebApi/api/v1/boxplot/species=Arabidopsis_thaliana&expId=106&omicsType=valMetabolomics&pId=84&mId=4349&dataVersion=1.0&minLod=true&legendColor=sampleName/'
+PMR_SERVICE = '/service'
+PMR_QUERY = '/field=value'
+PMR_EXAMPLE_SEARCH = 'http://pmr-webapi.gdcb.iastate.edu/pmrWebApi/api/v1/boxplot/species=Arabidopsis_thaliana&expId=106&omicsType=valMetabolomics&pId=84&mId=4349&dataVersion=1.0&minLod=true&legendColor=sampleName/'
+PMR_EXAMPLE_METABOLITE_LIST = 'http://pmr-webapi.gdcb.iastate.edu/pmrWebApi/api/v1/metabolites/list/species=Arabidopsis_thaliana&expId=106&pId=84&dataVersion=1.0/'
 
 def list(args):
     """
     List metabolite IDs accepted by search().
     """
-    print '{"mID":4383}'
+    if args == None:
+        print '{"mID":4383}'
+        print "---"
+        return
+
+    PMR_SERVICE = '/metabolites/list'
+    PMR_QUERY = '/species=Arabidopsis_thaliana&expId=106&pId=84&dataVersion=1.0/'
+    execute_query(PMR_BASE_URL + PMR_SERVICE + PMR_QUERY)
     return
 
 def search(args):
@@ -24,13 +32,6 @@ def search(args):
     On error, raise HTTPError exception.
     On success, print the JSON payload to STDOUT.
     """
-
-    # Test. What if there is no output?
-    #print "---"
-    #return
-    # Result: Adama throws an exception, apperently from a JSON parser.
-    #     "exception": "ValueError", "message": "No JSON object could be decoded", ...
-
     if args == None:
         # Back door.
         # Just during our development phase, the return is hard-coded.
@@ -39,14 +40,17 @@ def search(args):
         print "---"
         return
 
-    # Parse the parameter args.
-    # Expect type dictionary.
-    # Expect the dictionary defines mID etc.
-    # metaboliteID = args['mID']
+    PMR_SERVICE = '/boxplot'
+    PMR_QUERY = '/species=Arabidopsis_thaliana&expId=106&omicsType=valMetabolomics&pId=84&mId=4349&dataVersion=1.0&minLod=true&legendColor=sampleName/'
+    execute_query(PMR_BASE_URL + PMR_SERVICE + PMR_QUERY)
+    return
 
-    # If the remote service indicates success (200) then pass along the payload.
-    # Assume the payload is a JSON object.
-    remoteURL = PMR_BASE_URL + PMR_SERVICE + PMR_QUERY
+def execute_query(remoteURL):
+    # Test. What if there is no output?
+    #print "---"
+    #return
+    # Result: Adama throws an exception, apperently from a JSON parser.
+    #     "exception": "ValueError", "message": "No JSON object could be decoded", ...
 
     # Invoke the remote service.
     response = requests.get(remoteURL)
@@ -57,9 +61,13 @@ def search(args):
 
     response_code = response.status_code
     if response_code != 200:
-        # Later, change this to raise an exception instead.
-        print '{"error":' + response.reason + '}'
-        print '---'
+        ## This is useful for local debugging
+        # print '{"URL":' + remoteURL + '}'
+        # print '{"error":' + response.reason + '}'
+        # print '---'
+        # return
+        ## This is better for deployment
+        raise HTTPError
         return
 
     # Do not call response.json() because the return is wrapped in envelope.
@@ -73,5 +81,5 @@ def search(args):
 # This is for interactive testing. Use the unix command 'python main.py'.
 # It does not hurt to deploy the program like this.
 # Adama does not run the main program, it seems.
-search('4383')
 list('metabolite')
+search('4383')

@@ -55,18 +55,17 @@ def search(args):
     ###response.raise_for_status();
 
     response_code = response.status_code
-    if response_code == 200:
-        print '{"status":200}'
-        print '---'
-    else:
+    response_text = response.text
+    if response_code != 200:
+        # Later, change this to raise an exception instead.
         print '{"error":' + response.reason + '}'
         print '---'
-    return
+        return
 
     # Do not output JSON. Let Adama environment format this.
     #print response.json()
     #print '---'
-    print response.text
+    #print response.text
     print '---'
     return
 

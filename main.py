@@ -23,11 +23,13 @@ def search(args):
     On success, print the JSON payload to STDOUT.
     """
 
-    # Test. Expect no timeout.
-    print "---"
-    return
+    # Test. What if there is no output?
+    #print "---"
+    #return
+    # Result: Adama throws an exception, apperently from a JSON parser.
+    #     "exception": "ValueError", "message": "No JSON object could be decoded", ...
 
-    if args == None:
+    if args == None or args != None:
         # Back door.
         # Just during our development phase, the return is hard-coded.
         # The following value is sample data to draw an actual box plot with plotly.

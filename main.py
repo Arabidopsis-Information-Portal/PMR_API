@@ -49,14 +49,18 @@ def search(args):
 
     # Invoke the remote service.
     response = requests.get(remoteURL)
-    # For debug, ignore response, just exit
-    print remoteURL
-    print '---'
-    return
 
     # This library method raises HTTPError exception if status not 200.
     #if response.status_code != 200:
-    response.raise_for_status();
+    ###response.raise_for_status();
+
+    if response.status_code == 200:
+        print '{"good news"}'
+        print '---'
+    else:
+        print '{"bad news"}'
+        print '---'
+    return
 
     # Do not output JSON. Let Adama environment format this.
     #print response.json()

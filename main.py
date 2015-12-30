@@ -48,6 +48,8 @@ def search(args):
     # For debug, uncomment...
     #print remoteURL
     #print '---'
+
+    # Invoke the remote service.
     response = requests.get(remoteURL)
 
     # This library method raises HTTPError exception if status not 200.
@@ -59,6 +61,7 @@ def search(args):
     #print '---'
     print response.text
     print '---'
+    return
 
 # This is for interactive testing. Use the unix command 'python main.py'.
 # It does not hurt to deploy the program like this.

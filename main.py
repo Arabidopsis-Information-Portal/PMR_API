@@ -41,13 +41,19 @@ def search(args):
     #print remoteURL
     #print '---'
     response = requests.get(remoteURL, verify=False)
-    if response.status_code==200:
-        # Do not output JSON. Let Adama environment format this.
-        #print response.json()
-        #print '---'
-        print response.text
-        print '---'
 
-# For interactive test, uncomment this call.
+    # This library method raises HTTPError exception if status not 200.
+    #if response.status_code != 200:
+    response.raise_for_status();
+
+    # Do not output JSON. Let Adama environment format this.
+    #print response.json()
+    #print '---'
+    print response.text
+    print '---'
+
+# This is for interactive testing. Use the unix command 'python main.py'.
+# It does not hurt to deploy the program like this.
+# Adama does not run the main program, it seems.
 search('4383')
 list('metabolite')

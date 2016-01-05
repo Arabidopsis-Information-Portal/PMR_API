@@ -3,6 +3,11 @@
 # optional: import python libraries such as 'import json'
 import requests
 import json
+import logging
+
+logging.basicConfig(level=logging.INFO)
+log = logging.getLogger(__name__)
+log.setLevel(logging.INFO)
 
 PMR_BASE_URL = 'http://pmr-webapi.gdcb.iastate.edu/pmrWebApi/api/v1'
 PMR_SERVICE = '/service'
@@ -39,9 +44,13 @@ def execute_query(remoteURL):
     # Do not return response.text because quote characters need escaping.
     # Instead, get the JSON text from response and use json.dumps().
     response_text = response.text
-    print json.dumps(response_text)
+    #log.info("Response Text:" + response_text)
+    parsed_json = json.loads(response_text)
+    log.info("Parsed JSON:")
+    log.info(parsed_json)
+    #print json.dumps(demjson.decode(response_text))
+    print json.dumps(parsed_json)
     print '---'
-    return
 
 def list(args):
     """
@@ -81,5 +90,5 @@ def search(args):
 # This is for interactive testing. Use the unix command 'python main.py'.
 # It does not hurt to deploy the program like this.
 # Adama does not run the main program, it seems.
-list('metabolite')
+#list('metabolite')
 search('4383')

@@ -44,11 +44,10 @@ def execute_query(remoteURL):
     # Do not return response.text because quote characters need escaping.
     # Instead, get the JSON text from response and use json.dumps().
     response_text = response.text
-    #log.info("Response Text:" + response_text)
+    log.info("Response Text:" + response_text)
     parsed_json = json.loads(response_text)
     log.info("Parsed JSON:")
     log.info(parsed_json)
-    #print json.dumps(demjson.decode(response_text))
     print json.dumps(parsed_json)
     print '---'
 
@@ -91,4 +90,4 @@ def search(args):
 # It does not hurt to deploy the program like this.
 # Adama does not run the main program, it seems.
 #list('metabolite')
-search('4383')
+#search('4383')

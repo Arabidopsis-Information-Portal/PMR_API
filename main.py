@@ -32,7 +32,7 @@ def execute_query(remoteURL):
         # print '---'
         # return
         ## This is better for deployment
-        raise HTTPError
+        raise requests.exceptions.HTTPError
         return
 
     # Do not call response.json() because the return is wrapped in envelope.
@@ -53,7 +53,7 @@ def list(args):
         return
 
     PMR_SERVICE = '/metabolites/list'
-    PMR_QUERY = '/species=Arabidopsis_thaliana&expId=106&pId=84&dataVersion=1.0/'
+    PMR_QUERY = '?species=Arabidopsis_thaliana&expId=106&pId=84&dataVersion=1.0/'
     execute_query(PMR_BASE_URL + PMR_SERVICE + PMR_QUERY)
     return
 
@@ -74,7 +74,7 @@ def search(args):
         return
 
     PMR_SERVICE = '/boxplot'
-    PMR_QUERY = '/species=Arabidopsis_thaliana&expId=106&omicsType=valMetabolomics&pId=84&mId=4349&dataVersion=1.0&minLod=true&legendColor=sampleName/'
+    PMR_QUERY = '/list?species=Arabidopsis_thaliana&expId=106&omicsType=valMetabolomics&pId=84&mId=4349&dataVersion=1.0&minLod=true&legendColor=sampleName&outputFormat=plot/'
     execute_query(PMR_BASE_URL + PMR_SERVICE + PMR_QUERY)
     return
 

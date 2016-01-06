@@ -1,0 +1,60 @@
+---
+
+name: boxplot
+version: 0.4
+type: query
+main_module: services.boxplot_api.main.py
+url: http://metnetdb.org/PMR/
+description: 'Boxplot API to retrieve data to display a plot for a given combination of experiment, metabolite, platform, and sample'
+icon: pmr_large.png
+whitelist:
+  - pmr-webapi.gdcb.iastate.edu
+
+requirements:
+    - requests
+
+endpoints:
+  /search:
+    summary: Retrieves experimental data for a given experiment, metabolite, and platform to display a boxplot in JSON format
+    description: 'Retrieves experimental data for a given experiment, metabolite, and platform to display a boxplot'
+    parameters:
+      - name: experimentID
+        description: experiment ID
+        type: integer
+        default: 106
+        required: true
+      - name: platformID
+        description: platform ID
+        type: integer
+        default: 84
+        required: true
+      - name: metaboliteID
+        description: metabolite ID
+        type: string
+        required: integer
+        default: 4349
+      - name: dataVersion
+        description: data version
+        type: float
+        default: 1.0
+        required: true
+
+
+  /list:
+    summary: Retrieves a list of metabolites for a given experiment, and platform in JSON format
+    description: Retrieves a list of metabolites for a given experiment, and platform in JSON format
+    parameters:
+      - name: experimentID
+        description: experiment ID
+        type: integer
+        default: 106
+        required: true
+      - name: platformID
+        description: platform ID
+        type: integer
+        default: 84
+      - name: dataVersion
+        description: data version
+        type: float
+        default: 1.0
+        required: true

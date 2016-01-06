@@ -48,8 +48,3 @@ endpoints:
         description: platform ID
         type: integer
         default: 84
-      - name: dataVersion
-        description: data version
-        type: float
-        default: 1.0
-        required: true

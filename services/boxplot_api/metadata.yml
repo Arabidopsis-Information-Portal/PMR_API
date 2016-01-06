@@ -33,11 +33,6 @@ endpoints:
         type: string
         required: integer
         default: 4349
-      - name: dataVersion
-        description: data version
-        type: float
-        default: 1.0
-        required: false
 
 
   /list:

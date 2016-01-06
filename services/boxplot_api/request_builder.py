@@ -10,8 +10,7 @@ log.setLevel(logging.INFO)
 user_params_map = {
   'experimentID' : 'expId',
   'platformID' : 'pId',
-  'metaboliteID' : 'mId',
-  'dataVersion' :'dataVersion'
+  'metaboliteID' : 'mId'
   }
 
 api_param_value_map = {
@@ -19,7 +18,8 @@ api_param_value_map = {
     'omicsType' : 'valMetabolomics',
     'minLod' : 'true',
     'legendColor' : 'sampleName',
-    'outputFormat' : 'plot'
+    'outputFormat' : 'plot',
+    'dataVersion' :'1.0'
 }
 
 
@@ -54,17 +54,6 @@ def build_param_map(args):
          params[_key_mID] = args[_key_metaboliteID]
     else:
          raise Exception("No metaboliteID has been submitted!")
-
-
-    #make sure data version is present or fill default value
-    # dataVersion
-    _key_dataVersion = 'dataVersion'
-
-    if _key_dataVersion in args.keys():
-        _key_dataVersion = user_params_map[_key_dataVersion]
-        params[_key_dataVersion] = args[_key_dataVersion]
-    else:
-        params[_key_dataVersion] = 1.0
 
     # fill default parameters
     for key, value in api_param_value_map.iteritems():

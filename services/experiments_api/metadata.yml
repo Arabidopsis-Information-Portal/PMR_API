@@ -1,0 +1,51 @@
+---
+
+name: pmr_experiments_api
+version: 0.4
+type: query
+main_module: services.experiments_api.main.py
+url: http://metnetdb.org/PMR/
+description: 'Experiment API to retrieve experiment data by id, list of available experiments
+icon: pmr_large.png
+whitelist:
+  - pmr-webapi.gdcb.iastate.edu
+
+requirements:
+    - requests
+    - jsonpickle
+
+endpoints:
+  /search:
+    summary: Retrieves experiment for a given experiment ID in JSON format
+    description: 'Retrieves experiment for a given experiment ID'
+    parameters:
+      - name: experimentID
+        description: experiment ID
+        type: integer
+        default: 106
+        required: true
+
+  /list:
+    summary: Retrieves a list of available experiments in JSON format
+    description: Retrieves a list of available experiments in JSON format
+
+
+authors:
+    - name: Manhoi Hur
+      email: mhhur@iastate.edu
+      sponsor_organization: "The Plant/Eukaryotic and Microbial Systems Resource, Human Computer Interaction and Department of Genetics Development and Cell Biology,Iowa State University"
+      sponsor_uri: http://metnetdb.org/PMR/
+    - name: Irina Belyaeva
+      email: ibelyaev@jcvi.org
+      sponsor_organization: JCVI
+      sponsor_uri: http://www.jcvi.org
+
+sources:
+    - title: "A global approach to analysis and interpretation of metabolic data for plant natural product discovery"
+      decsription: "Hur, Manhoi, et al. A global approach to analysis and interpretation of metabolic data for plant natural product discovery. Natural product reports 30.4 (2013): 565-583."
+      language: en-us
+      sponsor_organization_name: "The Plant/Eukaryotic and Microbial Systems Resource, Human Computer Interaction and Department of Genetics Development and Cell Biology,Iowa State University"
+      sponsor_uri: "http://metnetdb.org/PMR/"
+      provider_name: Manhoi Hur
+      provider_email: mhhur@iastate.edu
+      uri: "http://pubs.rsc.org/en/Content/ArticleLanding/2013/NP/C3NP20111B#!divAbstract"

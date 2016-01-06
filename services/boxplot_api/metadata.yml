@@ -48,3 +48,4 @@ endpoints:
         description: platform ID
         type: integer
         default: 84
+        required: true

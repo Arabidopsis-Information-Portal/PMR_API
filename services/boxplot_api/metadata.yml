@@ -37,7 +37,7 @@ endpoints:
         description: data version
         type: float
         default: 1.0
-        required: true
+        required: false
 
 
   /list:

@@ -1,6 +1,6 @@
 ---
 
-name: boxplot_api
+name: pmr_boxplot_api
 version: 0.4
 type: query
 main_module: services.boxplot_api.main.py

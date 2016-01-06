@@ -13,7 +13,7 @@ log.setLevel(logging.INFO)
 
 def search(args):
 
-    svc_url = svc.get_svc_base_url()
+    svc_url = svc.get_boxplot_base_url()
 
     try:
          response = rh.build_payload(svc_url, args)

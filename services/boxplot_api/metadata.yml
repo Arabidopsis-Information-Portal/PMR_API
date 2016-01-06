@@ -49,3 +49,23 @@ endpoints:
         type: integer
         default: 84
         required: true
+
+authors:
+    - name: Manhoi Hur
+      email: mhhur@iastate.edu
+      sponsor_organization: "The Plant/Eukaryotic and Microbial Systems Resource, Human Computer Interaction and Department of Genetics Development and Cell Biology,Iowa State University"
+      sponsor_uri: http://metnetdb.org/PMR/
+    - name: Irina Belyaeva
+      email: ibelyaev@jcvi.org
+      sponsor_organization: JCVI
+      sponsor_uri: http://www.jcvi.org
+
+sources:
+    - title: "A global approach to analysis and interpretation of metabolic data for plant natural product discovery"
+      decsription: "Hur, Manhoi, et al. A global approach to analysis and interpretation of metabolic data for plant natural product discovery. Natural product reports 30.4 (2013): 565-583."
+      language: en-us
+      sponsor_organization_name: "The Plant/Eukaryotic and Microbial Systems Resource, Human Computer Interaction and Department of Genetics Development and Cell Biology,Iowa State University"
+      sponsor_uri: "http://metnetdb.org/PMR/"
+      provider_name: Manhoi Hur
+      provider_email: mhhur@iastate.edu
+      uri: "http://pubs.rsc.org/en/Content/ArticleLanding/2013/NP/C3NP20111B#!divAbstract"

@@ -17,9 +17,17 @@ def main():
     ## pass the namespace you test again (your dev namespace or production)
     test_namespace = 'ibelyaev-dev'
 
-    args = {'experimentID': '106', 'platformID':'84', 'metaboliteID':'4349', 'dataVersion': '1.0', '_url': 'https://api.araport.org/community/v0.3', '_namespace': test_namespace}
+    #search
+    args = {'experimentID': '106', 'platformID':'84', 'metaboliteID':'4349', '_url': 'https://api.araport.org/community/v0.3', '_namespace': test_namespace}
     driver.search(args)
-    param_map = rb.build_param_map(args)
+    param_map = rb.build_param_map(args, 'search')
+    log.info("Param Map:")
+    log.info(param_map)
+
+    # list
+    args = {'experimentID': '106', 'platformID':'84', '_url': 'https://api.araport.org/community/v0.3', '_namespace': test_namespace}
+    driver.list(args)
+    param_map = rb.build_param_map(args, 'list')
     log.info("Param Map:")
     log.info(param_map)
 

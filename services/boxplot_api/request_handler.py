@@ -27,8 +27,8 @@ def handle_request(url, token, params, **kwargs):
         raise Exception('not a JSON object: {}'.format(response.text))
 
 
-def build_payload(url, params, **kwargs):
-    transformed_params = rb.build_param_map(params)
+def build_payload(url, params, type, **kwargs):
+    transformed_params = rb.build_param_map(params, type)
     log.info("Transformed_params: {0}".format(transformed_params))
     r = requests.get(url, params=transformed_params)
     log.debug("Response Text:")

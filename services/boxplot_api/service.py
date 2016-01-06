@@ -11,4 +11,4 @@ def get_boxplot_base_url():
     return 'http://pmr-webapi.gdcb.iastate.edu/pmrWebApi/api/v1/boxplot/list'
 
 def get_list_base_url():
-    return 'http://pmr-webapi.gdcb.iastate.edu/pmrWebApi/api/v1/boxplot/list'
+    return 'http://pmr-webapi.gdcb.iastate.edu/pmrWebApi/api/v1/metabolites/list'

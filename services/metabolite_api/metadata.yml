@@ -27,7 +27,7 @@ endpoints:
       - name: platformID
         description: platformID
         type: integer
-        default: 100
+        default: 84
         required: true
       - name: metaboliteID
         description: metaboliteID

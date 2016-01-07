@@ -1,0 +1,71 @@
+---
+
+name: pmr_metabolite_api
+version: 0.4
+type: query
+main_module: services.platform_api.main.py
+url: http://metnetdb.org/PMR/
+description: Metabolite API to retrieve metabolite data by experiment id, platform id, metabolite id, list of available experiments, platforms, and metabolites'
+icon: pmr_large.png
+whitelist:
+  - pmr-webapi.gdcb.iastate.edu
+
+requirements:
+    - requests
+    - jsonpickle
+
+endpoints:
+  /search:
+    summary: Retrieves metabolite for a given experiment ID/platform ID/metaboliteID in JSON format
+    description: 'Retrieves metabolite for a given experiment ID/platform ID/metaboliteID'
+    parameters:
+      - name: experimentID
+        description: experiment ID
+        type: integer
+        default: 106
+        required: true
+      - name: platformID
+        description: platformID
+        type: integer
+        default: 100
+        required: true
+      - name: metaboliteID
+        description: metaboliteID
+        type: integer
+        default: 4349
+        required: true
+
+  /list:
+    summary: Retrieves a list of metabolites for a given experiment, and platform in JSON format
+    description: Retrieves a list of metabolites for a given experiment, and platform in JSON format
+    parameters:
+      - name: experimentID
+        description: experiment ID
+        type: integer
+        default: 106
+        required: true
+      - name: platformID
+        description: platform ID
+        type: integer
+        default: 84
+        required: true
+
+authors:
+    - name: 'Eve Syrkin Wurtele, Manhoi Hur'
+      email: mash@iastate.edu, mhhur@iastate.edu
+      sponsor_organization: "The Plant/Eukaryotic and Microbial Systems Resource, Human Computer Interaction and Department of Genetics Development and Cell Biology,Iowa State University"
+      sponsor_uri: http://metnetdb.org/PMR/
+    - name: Irina Belyaeva
+      email: ibelyaev@jcvi.org
+      sponsor_organization: JCVI
+      sponsor_uri: http://www.jcvi.org
+
+sources:
+    - title: "A global approach to analysis and interpretation of metabolic data for plant natural product discovery"
+      decsription: "Hur, M., Campbell, A. A., Almeida-de-Macedo, M., Li, L., Ransom, N., Jose, A., ... & Wurtele, E. S. (2013). A global approach to analysis and interpretation of metabolic data for plant natural product discovery. Natural product reports, 30(4), 565-583."
+      language: en-us
+      sponsor_organization_name: "The Plant/Eukaryotic and Microbial Systems Resource, Human Computer Interaction and Department of Genetics Development and Cell Biology,Iowa State University"
+      sponsor_uri: "http://metnetdb.org/PMR/"
+      provider_name: 'Eve Syrkin Wurtele, Biologist, Principal Investigator, Manhoi Hur, Staff Scientist/Analyst, Bioinformatics'
+      provider_email: mash@iastate.edu, mhhur@iastate.edu
+      uri: "http://pubs.rsc.org/en/Content/ArticleLanding/2013/NP/C3NP20111B#!divAbstract"

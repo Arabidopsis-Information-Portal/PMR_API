@@ -3,7 +3,7 @@
 name: pmr_metabolite_api
 version: 0.4
 type: query
-main_module: services.platform_api.main.py
+main_module: services.metabolite_api.main.py
 url: http://metnetdb.org/PMR/
 description: Metabolite API to retrieve metabolite data by experiment id, platform id, metabolite id, list of available experiments, platforms, and metabolites'
 icon: pmr_large.png

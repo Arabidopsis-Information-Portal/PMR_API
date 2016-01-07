@@ -4,7 +4,6 @@ import json
 import logging
 from collections import namedtuple
 import request_handler as rh
-import experiment as exp
 import exception
 import jsonpickle
 

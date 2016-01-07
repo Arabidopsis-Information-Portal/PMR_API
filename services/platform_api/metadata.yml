@@ -1,11 +1,11 @@
 ---
 
-name: pmr_experiments_api
+name: pmr_platform_api
 version: 0.4
 type: query
-main_module: services.experiments_api.main.py
+main_module: services.platform_api.main.py
 url: http://metnetdb.org/PMR/
-description: 'Experiment API to retrieve experiment data by id, list of available experiments'
+description: 'Platform API to retrieve platform data by experiment id, platform id, list of available experiments, and platforms'
 icon: pmr_large.png
 whitelist:
   - pmr-webapi.gdcb.iastate.edu

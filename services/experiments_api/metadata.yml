@@ -31,7 +31,7 @@ endpoints:
 
 
 authors:
-    - name: Manhoi Hur
+    - name: 'Eve Syrkin Wurtele, Manhoi Hur'
       email: mhhur@iastate.edu
       sponsor_organization: "The Plant/Eukaryotic and Microbial Systems Resource, Human Computer Interaction and Department of Genetics Development and Cell Biology,Iowa State University"
       sponsor_uri: http://metnetdb.org/PMR/
@@ -46,6 +46,6 @@ sources:
       language: en-us
       sponsor_organization_name: "The Plant/Eukaryotic and Microbial Systems Resource, Human Computer Interaction and Department of Genetics Development and Cell Biology,Iowa State University"
       sponsor_uri: "http://metnetdb.org/PMR/"
-      provider_name: Manhoi Hur
-      provider_email: mhhur@iastate.edu
+      provider_name: 'Eve Syrkin Wurtele, Biologist, Principal Investigator, Manhoi Hur, Staff Scientist/Analyst, Bioinformatics'
+      provider_email: mash@iastate.edu, mhhur@iastate.edu
       uri: "http://pubs.rsc.org/en/Content/ArticleLanding/2013/NP/C3NP20111B#!divAbstract"

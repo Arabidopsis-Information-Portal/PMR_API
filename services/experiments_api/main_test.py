@@ -1,9 +1,6 @@
-import json
 import requests
 import logging
-import service as svc
 import request_builder as rb
-import request_handler as rh
 import main as driver
 from requests.exceptions import ConnectionError
 
@@ -17,7 +14,7 @@ def main():
     ## pass the namespace you test again (your dev namespace or production)
     test_namespace = 'ibelyaev-dev'
 
-    #search
+    #search test case
     #args = {'experimentID': '106', 'platformID':'84', 'metaboliteID':'4349', '_url': 'https://api.araport.org/community/v0.3', '_namespace': test_namespace}
     args = {'experimentID': '106'}
     driver.search(args)
@@ -25,7 +22,7 @@ def main():
     log.info("Param Map:")
     log.info(param_map)
 
-    # list
+    # list test case
     args = {'experimentID': '106', 'platformID':'84', '_url': 'https://api.araport.org/community/v0.3', '_namespace': test_namespace}
     driver.list(args)
     param_map = rb.build_param_map(args, 'list')

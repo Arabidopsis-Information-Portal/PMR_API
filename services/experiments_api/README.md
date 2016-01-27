@@ -17,3 +17,7 @@ required parameters:
 
 [API Reference]
 (https://rawgit.com/Arabidopsis-Information-Portal/PMR_API/master/doc/api/experiments/index.html)
+
+## Installation
+
+[Installation Instructions](INSTALL.md)

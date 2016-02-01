@@ -83,7 +83,7 @@ def list(args):
     :return: Returns a response object from the webservice in the json format if success raises exception otherwise
     
     """
-    # get search service url
+    # get list service url
     svc_url = svc.get_list_base_url()
 
     try:

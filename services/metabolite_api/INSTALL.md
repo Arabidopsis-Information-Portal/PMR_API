@@ -383,7 +383,7 @@ Response Received:
 < Date: Mon, 01 Feb 2016 02:24:58 GMT
 * Server WSO2-PassThrough-HTTP is not blacklisted
 < Server: WSO2-PassThrough-HTTP
-< Link: https://api.araport.org/community/v0.3/ibelyaev-dev/pmr_metabolite_api_v0.4/prov/38f2d971bc624abe807733a518cc6362; rel="http://www.w3.org/ns/prov#has_provenance"
+< Link: https://api.araport.org/community/v0.3/pmr-dev/pmr_metabolite_api_v0.4/prov/38f2d971bc624abe807733a518cc6362; rel="http://www.w3.org/ns/prov#has_provenance"
 < Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization, Content-Range, Range
 < Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
 < Content-Type: application/json
@@ -403,7 +403,7 @@ Response Received:
 #### Issue a List Request
 
 ```
-$curl -v -H "Authorization: Bearer $TOKEN" "https://api.araport.org/community/v0.3/$NS/pmr_platform_api_v0.4/list?experimentID=106&platformID=84"
+$https://api.araport.org/community/v0.3/pmr/pmr_metabolite_api_v0.4/list?experimentID=106&platformID=84
 ```
 
 ```
@@ -411,7 +411,7 @@ HTTP/1.1 200 OK
 < Date: Mon, 01 Feb 2016 02:25:56 GMT
 * Server WSO2-PassThrough-HTTP is not blacklisted
 < Server: WSO2-PassThrough-HTTP
-< Link: https://api.araport.org/community/v0.3/ibelyaev-dev/pmr_platform_api_v0.4/prov/cfdc02c05c374ad9bf2fc59f994b8a30; rel="http://www.w3.org/ns/prov#has_provenance"
+< Link: https://api.araport.org/community/v0.3/pmr-dev/pmr_platform_api_v0.4/prov/cfdc02c05c374ad9bf2fc59f994b8a30; rel="http://www.w3.org/ns/prov#has_provenance"
 < Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization, Content-Range, Range
 < Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
 < Content-Type: application/json
@@ -420,11 +420,33 @@ HTTP/1.1 200 OK
 < Connection: close
 < Transfer-Encoding: chunked
 <
-{"result": [
-[{"platformId": 84, "expName": "At2010-KO 1", "platformName": "Fatty Acids [Nikolau lab]", "species": "Arabidopsis_thaliana", "expId": 106}, {"platformId": 87, "expName": "At2010-KO 1", "platformName": "Phytosterols [Lange lab]", "species": "Arabidopsis_thaliana", "expId": 106}, {"platformId": 88, "expName": "At2010-KO 1", "platformName": "Isoprenoids [Lange lab]", "species": "Arabidopsis_thaliana", "expId": 106}, {"platformId": 89, "expName": "At2010-KO 1", "platformName": "Lipidomics [Welti lab]", "species": "Arabidopsis_thaliana", "expId": 106}, {"platformId": 90, "expName": "At2010-KO 1", "platformName": "Non-targeted GC-TOF [Fiehn lab]", "species": "Arabidopsis_thaliana", "expId": 106}, {"platformId": 91, "expName": "At2010-KO 1", "platformName": "Non-targeted UPLC-Q-TOF [Sumner lab]", "species": "Arabidopsis_thaliana", "expId": 106}, {"platformId": 95, "expName": "At2010-KO 1", "platformName": "Cuticle Wax [Nikolau lab]", "species": "Arabidopsis_thaliana", "expId": 106}, {"platformId": 100, "expName": "At2010-KO 1", "platformName": "Ultra Performance Liquid Chromatography [Shulaev lab]", "species": "Arabidopsis_thaliana", "expId": 106}]
-],
-"metadata": {"time_in_main": 0.05636191368103027},
-"status": "success"}
+{
+  "result": [
+    [
+      {
+        "mId": 4348,
+        "metaboliteName": "16-Hydroxyhexadecanoic acid"
+      },
+      {
+        "mId": 4349,
+        "metaboliteName": "18-hydroxyoctadeca-9,12-dienoic acid"
+      },
+      
+    },
+      {
+        "mId": 67060,
+        "metaboliteName": "BJN-GCMS-FAMES-3204.2"
+      }
+    ]
+  ],
+  
+  ...
+  
+  "metadata": {
+    "time_in_main": 2.3824939727783203
+  },
+  "status": "success"
+}
 * Closing connection 0
 ```
 

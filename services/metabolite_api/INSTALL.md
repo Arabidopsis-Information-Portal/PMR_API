@@ -446,7 +446,7 @@ You may repeat deployment steps above as needed.
 
 ## Code Testing
 
-To test your code locally you may extend or simply run `main_test.py` from the command line. It has a test code for the search and list endpoint.
+To test your code locally you may extend or simply run `main_test.py` from the command line. It has a test code for the search and list endpoints.
 
 ```
 $cd git/scienceapps/PMR_API/services/metabolite_api

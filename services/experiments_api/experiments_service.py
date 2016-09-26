@@ -21,9 +21,7 @@ Experiments Service API. Provides search, and serialization sevices
 """
 
 import logging
-from collections import namedtuple
 import request_handler as rh
-import experiment as exp
 import exception
 import jsonpickle
 
@@ -37,18 +35,18 @@ def get_experiment_by_id(url, args):
     from passed service url and parameters
     validate parameters
     perform experiment lookup
-    
+
     :type url: string
     :param url: The service url
-      
+
     :type args: dict
-    :param args: The dictionary(map) of parameters submitted via query string 
-       
+    :param args: The dictionary(map) of parameters submitted via query string
+
     :rtype: json like string
     :return: Returns Experiment as json-like string
-    
+
     """
-   
+
     # retrieve experiment ID from request parameters
     lookup_id = args['experimentID']
 
@@ -58,7 +56,7 @@ def get_experiment_by_id(url, args):
         raise Exception("Non integer experiment ID was submitted!")
 
     log.debug("Experiment Lookup Id:" + str(lookup_id))
-    
+
     # get list of Experiment objects
     response = get_experiment_as_objects(url, args)
 
@@ -84,16 +82,16 @@ def get_experiment_by_id(url, args):
 def get_experiment_as_objects(url, args):
     """ Retrieves all experiments as Experiment objects
     return  list of Experiment objects
-    
+
     :type url: string
     :param url: request url
-    
+
     :type args: string
     :param args: request parameters
-      
+
     :rtype: list
     :return: Returns list of Experiment objects if success raises exception otherwise
-    
+
     """
     response = rh.loadExperiments(url, args, 'list')
     if not response:
@@ -104,16 +102,16 @@ def get_experiment_as_objects(url, args):
 def get_experiments_as_json(url, args):
     """ Retrieves all experiments in json format
     return  experiments in json format
-    
+
     :type url: string
     :param url: request url
-    
+
     :type args: string
     :param args: request parameters
-      
+
     :rtype: list
     :return: Returns list of Experiment objects in json format if success raises exception otherwise
-    
+
     """
     response = rh.build_payload(url, args, 'list')
     return response
@@ -122,17 +120,17 @@ def get_experiments_as_json(url, args):
 def find(f, seq):
     """ Retrieves object by identifier
     return  experiment object
-    
+
     :type f: int
-    :param f: current value of identifier 
-    
+    :param f: current value of identifier
+
     :type seq: string
     :param seq: value to search for
-      
-    :rtype: Experiment 
+
+    :rtype: Experiment
     :return: Returns Experiment object if object found None otherwise
-    
+
     """
     for item in seq:
-     if f(item):
-       return item
+        if f(item):
+            return item

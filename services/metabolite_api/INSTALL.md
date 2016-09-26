@@ -31,13 +31,13 @@ $ source  ~/.bash_profile
 
 ### Get an Authentication Token
 
-You would need obtain a set of API keys using one-time action command. If you already have your API keys, you may skip to the next section. 
+You would need obtain a set of API keys using one-time action command. If you already have your API keys, you may skip to the next section.
 
-### <a name="api-client"></a>Create API client	
+### <a name="api-client"></a>Create API client
 Now you will issue a request to the ADAMA server to create API client. The name of the API client is ``pmr_cli_app ``.
 
 Please, open your terminal, and run command:
-	
+
 ```
 $ curl -Lk -X POST \
      -u "$USERNAME:$PASSWORD"  \
@@ -113,7 +113,7 @@ Here the steps that automate the procedure to refresh an authentication token an
 $ vi ~/.bash_profile
   export CONSUMER_KEY=<actualValueofConsumerKey>
   export CONSUMER_SECRET=<actualValueofConsumerSecret>
-  
+
   function update_token(){
 curl -Lk -X POST \
      -u "$CONSUMER_KEY:$CONSUMER_SECRET"  \
@@ -130,7 +130,7 @@ curl -Lk -X POST \
 $ source  ~/.bash_profile
 ```
 * Run in the terminal
- 
+
 ```
 $ update_token
 ```
@@ -147,7 +147,7 @@ Response Received:
 Export an authentication token as environment variable, and validate the value:
 
 ```
-$ export TOKEN=91584099511ffb3de947bcc3c67c55c 
+$ export TOKEN=91584099511ffb3de947bcc3c67c55c
 $ echo $TOKEN
 91584099511ffb3de947bcc3c67c55c
 ```
@@ -213,7 +213,7 @@ $ pip install -r requirements.txt
 An authentication token requires reactivation every four hours. You don't need repeat this step if you redeploy the API within token expiration timeframe.  
 
 * Run in the terminal
- 
+
 ```
 $update_token
 $export TOKEN=<access_token_value>
@@ -228,7 +228,7 @@ This step is optional during repetitive deployment session.
 ```
 curl -kL -X GET \
      -H "Authorization: Bearer $TOKEN" \
-     $ADAMA/status 
+     $ADAMA/status
 ```
 
 If the token and the server are working fine you should see:
@@ -251,7 +251,7 @@ The recommended way to create/test/deploy your services is first to publish your
 
 Let's assume you will create target development namespace ``pmr-dev ``.
 
-The rationality behind this step the following. 
+The rationality behind this step the following.
 
 First, by default  your development namespace will be active workspace. This will help you to avoid copy-pasting its value into a number of deployment commands.
 
@@ -346,7 +346,7 @@ Partial Response:
                     "sponsor_organization": "The Plant/Eukaryotic and Microbial Systems Resource, Human Computer Interaction and Department of Genetics Development and Cell Biology,Iowa State University",
                     "sponsor_uri": "http://metnetdb.org/PMR/"
                 },
-                
+
 ...
 
 "validate_request": false,
@@ -431,7 +431,7 @@ HTTP/1.1 200 OK
         "mId": 4349,
         "metaboliteName": "18-hydroxyoctadeca-9,12-dienoic acid"
       },
-      
+
     },
       {
         "mId": 67060,
@@ -439,9 +439,9 @@ HTTP/1.1 200 OK
       }
     ]
   ],
-  
+
   ...
-  
+
   "metadata": {
     "time_in_main": 2.3824939727783203
   },
@@ -477,7 +477,7 @@ $ python main_test.py
 
 You should receive the success message for both search and list requests issued.
 
-Note the results received in your terminal. You may test the webservice endpoints separately by commenting one of them and running thest module from the command line.
+Note the results received in your terminal. You may test the webservice endpoints separately by commenting one of them and running the module from the command line.
 
 
 ## Documentation Building
@@ -485,11 +485,12 @@ Note the results received in your terminal. You may test the webservice endpoint
 1. Open your terminal
 2. From the root source code directory run:
 
-```
+    ```
 $ cd ~/git/scienceapps/PMR_API/services/metabolite_api
 $ ./build_doc.sh
-```
-3. API documentation is generated in [API Doc Folder.](../../doc/api/metabolite/toc.html)
+    ```
+
+3. API documentation is generated in [API Doc Folder.](https://cdn.rawgit.com/Arabidopsis-Information-Portal/PMR_API/d7c882cd7337635dba872cbe3baa47762486c896/doc/api/metabolite/index.html)
 
 
 Optionally, you may customize the files included, the output format using API doc [configuration file.](doc.config)

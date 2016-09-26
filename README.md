@@ -10,10 +10,10 @@ Publication: [Hur, M., Campbell, A. A., Almeida-de-Macedo, M., Li, L., Ransom, N
 
 ## Web Services Installation
 
-[Platform API](services/platform_api/INSTALL.md)
+[Platform API](services/platform_api/INSTALL.md) ([Docs](https://cdn.rawgit.com/Arabidopsis-Information-Portal/PMR_API/d7c882cd7337635dba872cbe3baa47762486c896/doc/api/platform/index.html))
 
-[Metabolite API](services/metabolite_api/INSTALL.md)
+[Metabolite API](services/metabolite_api/INSTALL.md) ([Docs](https://cdn.rawgit.com/Arabidopsis-Information-Portal/PMR_API/d7c882cd7337635dba872cbe3baa47762486c896/doc/api/metabolite/index.html))
 
-[Experiments API](services/experiments_api/INSTALL.md)
+[Experiments API](services/experiments_api/INSTALL.md) ([Docs](https://cdn.rawgit.com/Arabidopsis-Information-Portal/PMR_API/d7c882cd7337635dba872cbe3baa47762486c896/doc/api/experiments/index.html))
 
-[Boxplot API](services/boxplot_api/INSTALL.md)
+[Boxplot API](services/boxplot_api/INSTALL.md) ([Docs](https://cdn.rawgit.com/Arabidopsis-Information-Portal/PMR_API/d7c882cd7337635dba872cbe3baa47762486c896/doc/api/boxplot/index.html))
